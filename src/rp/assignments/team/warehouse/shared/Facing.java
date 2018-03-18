@@ -20,4 +20,14 @@ public enum Facing {
      * Negative in the x-axis
      */
     WEST;
+
+    private Facing[] values = values();
+
+    public Facing turnRight() {
+        return this.values[(ordinal() + 1) % this.values.length];
+    }
+
+    public Facing turnLeft() {
+        return this.values[ordinal() == 0 ? this.values.length - 1 : ordinal() - 1];
+    }
 }
