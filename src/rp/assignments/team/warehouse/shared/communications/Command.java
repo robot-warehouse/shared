@@ -25,6 +25,10 @@ public enum Command {
      */
     SEND_PICKS,
     /**
+     * Send where the robot is facing
+     */
+    SEND_FACING,
+    /**
      * End of current sequence of messages
      */
     END,
