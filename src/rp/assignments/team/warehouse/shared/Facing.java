@@ -21,7 +21,7 @@ public enum Facing {
      */
     WEST;
 
-    private Facing[] values = values();
+    private static Facing[] values = values();
 
     public Facing turnRight() {
         return this.values[(ordinal() + 1) % this.values.length];
