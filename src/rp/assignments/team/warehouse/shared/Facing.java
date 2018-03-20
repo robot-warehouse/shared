@@ -1,5 +1,7 @@
 package rp.assignments.team.warehouse.shared;
 
+import rp.assignments.team.warehouse.shared.communications.Command;
+
 public enum Facing {
     /**
      * Positive in the y-axis, facing away from the lab door
@@ -29,5 +31,15 @@ public enum Facing {
 
     public Facing turnLeft() {
         return this.values[ordinal() == 0 ? this.values.length - 1 : ordinal() - 1];
+    }
+    
+    public static Facing strToFacing(String s) throws NullPointerException, IllegalArgumentException {
+        for (Facing f : Facing.values()) {
+            if (f.toString().equals(s)) {
+                return f;
+            }
+        }
+
+        throw new IllegalArgumentException("Not a value of this enum");
     }
 }
