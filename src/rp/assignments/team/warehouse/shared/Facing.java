@@ -26,11 +26,11 @@ public enum Facing {
     private static Facing[] values = values();
 
     public Facing turnRight() {
-        return this.values[(ordinal() + 1) % this.values.length];
+        return values[(ordinal() + 1) % values.length];
     }
 
     public Facing turnLeft() {
-        return this.values[ordinal() == 0 ? this.values.length - 1 : ordinal() - 1];
+        return values[ordinal() == 0 ? values.length - 1 : ordinal() - 1];
     }
     
     public static Facing strToFacing(String s) throws NullPointerException, IllegalArgumentException {
